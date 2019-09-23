@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    <bean id="text_editor_by_name" class="AutoWire_ByName.TextEditor_ByName" autowire="byName">
+        <property name="name" value="Autowire by name"/>
+    </bean>
+
+    <bean id="spellingCheckerByName" class="AutoWire_ByName.SpellingChecker_ByName"/>
+    -->
+
+    <bean id="text_editor_by_type" class="AutoWire_ByType.TextEditor_ByType" autowire="byType">
+        <property name="name" value="Autowire by type"/>
+    </bean>
+
+    <bean id="spellingChecker_ByType" class="AutoWire_ByType.SpellingChecker_ByType"/>
+</beans>

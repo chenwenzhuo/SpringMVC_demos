@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="say_hello" class="XmlConfig.SayHello">
+        <property name="message" value="Spring"/>
+        <property name="extraMessage" value="Hello Spring"/>
+    </bean>
+
+    <bean id="hello_post_processor" class="PostProcessor.HelloPostProcessorBean"
+          init-method="init" destroy-method="destroy">
+        <property name="message" value="message for hello post Processor"/>
+    </bean>
+<!--
+    <bean class="PostProcessor.HelloPostProcessor"/>
+-->
+    <bean id="father_bean" class="BeanInherit.FatherBean">
+        <property name="message_1" value="I'm FatherBean."/>
+        <property name="message_2" value="Hello."/>
+    </bean>
+
+    <bean id="child_bean" class="BeanInherit.ChildBean" parent="father_bean">
+        <property name="message_1" value="I'm ChildBean."/>
+        <property name="message_3" value="I have no children."/>
+    </bean>
+</beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    <bean id="text_editor_CBI" class="ConstructorBasedInjection.TextEditor_CBI">
+        <constructor-arg ref="spelling_checker_CBI"/>
+    </bean>
+
+    <bean id="spelling_checker_CBI" class="ConstructorBasedInjection.SpellingChecker_CBI"/>
+    -->
+
+    <!--
+    <bean id="text_editor_SBI" class="SetterBasedInjection.TextEditor_SBI">
+        <property name="spellingCheckerSBI" ref="spelling_checker_SBI"/>
+    </bean>
+
+    <bean id="spelling_checker_SBI" class="SetterBasedInjection.SpellingChecker_SBI"/>
+    -->
+
+    <bean id="java_collections" class="CollectionInjection.JavaCollections">
+        <property name="addressList">
+            <list>
+                <value>Beijing</value>
+                <value>London</value>
+                <value>NewYork</value>
+                <value>Moscow</value>
+            </list>
+        </property>
+
+        <property name="addressSet">
+            <set>
+                <value>Beijing</value>
+                <value>London</value>
+                <value>NewYork</value>
+                <value>Moscow</value>
+                <value>Moscow</value>
+            </set>
+        </property>
+
+        <property name="addressMap">
+            <map>
+                <entry key="1" value="Beijing"/>
+                <entry key="2" value="London"/>
+                <entry key="3" value="NewYork"/>
+                <entry key="4" value="Moscow"/>
+            </map>
+        </property>
+
+        <property name="addressProperties">
+            <props>
+                <prop key="one">Beijing</prop>
+                <prop key="two">London</prop>
+                <prop key="three">NewYork</prop>
+                <prop key="four">Moscow</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
